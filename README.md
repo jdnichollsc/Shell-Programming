@@ -1,7 +1,7 @@
 # Shell Programming
 Shell Programming and Scripting
 
-# Examples:
+# Unix Examples:
 ## menu
 ```
 while :
