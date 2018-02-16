@@ -1,7 +1,7 @@
 # Shell Programming
 Shell Programming and Scripting
 
-Example:
+# Examples:
 ## menu
 ```
 while :
@@ -39,9 +39,9 @@ echo "||________________________________________________________________________
 echo "|_______________________________________________________________________________________|"
 read opcion
 case $opcion in
-1) sh comandos; exit;;
-2) sh usuarios; exit;;
-3) sh archivos; exit;;
+1) sh commands; exit;;
+2) sh users; exit;;
+3) sh files; exit;;
 9) clear; exit;;
 *) echo "Error de Digitación"; sleep 1;;
 esac
@@ -229,7 +229,7 @@ case $opcion in
    fi;
    echo "Presione Enter para Continuar";
    read nada;;
-3) sh permisos; exit;;
+3) sh permissions; exit;;
 4) echo "Ingrese el Nombre del Archivo a Visualizar su Contenido";
    read visualizar;
    if test -f $visualizar
@@ -410,5 +410,5 @@ else
    echo "Error, El Archivo $archivo no Existe"
 sleep 1
 fi
-sh archivos
+sh files
 ```
