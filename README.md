@@ -412,3 +412,8 @@ sleep 1
 fi
 sh files
 ```
+
+# Happy coding
+Made with <3
+
+<img width="150px" src="http://phaser.azurewebsites.net/assets/nicholls.png" align="right">
