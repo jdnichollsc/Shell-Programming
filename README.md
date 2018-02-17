@@ -10,16 +10,16 @@ clear
 echo "_________________________________________________________________________________________"
 echo "|_______________________________________________________________________________________|"
 echo "||_____________________________________________________________________________________||"
-echo "|||                                                                                                                                                    |||"
-echo "|||                                  MENU DEL SISTEMA                                 |||"
 echo "|||                                                                                   |||"
-echo "|||      1. COMANDOS GENERALES                                                        |||"
+echo "|||                                    SYSTEM MENU                                    |||"
 echo "|||                                                                                   |||"
-echo "|||      2. VARIOS USUARIOS                                                           |||"
+echo "|||      1. GENERAL COMMANDS                                                          |||"
 echo "|||                                                                                   |||"
-echo "|||      3. SISTEMA DE ARCHIVOS                                                       |||"
+echo "|||      2. USERS                                                                     |||"
 echo "|||                                                                                   |||"
-echo "|||      9. TERMINAR                                                                  |||"
+echo "|||      3. FILE SYSTEM                                                               |||"
+echo "|||                                                                                   |||"
+echo "|||      9. FINISH                                                                    |||"
 echo "|||                                                                                   |||"
 echo "|||                                                                                   |||"
 echo "|||                                                                                   |||"
@@ -30,20 +30,20 @@ echo "|||                                                                       
 echo "|||                                                                                   |||"
 echo "|||                                                                                   |||"
 echo "|||                                                                        0000___000 |||"
-echo "|||      Señor Usuario, Por favor Seleccione Índice de Opción deseada      00000__000 |||"
+echo "|||      Please select desired option index                                00000__000 |||"
 echo "|||                                                                        000_000000 |||"
 echo "|||                                                                        000__00000 |||"
 echo "|||                                                                        000___0000 |||"
 echo "|||___________________________________________________________________________________|||"
 echo "||_____________________________________________________________________________________||"
 echo "|_______________________________________________________________________________________|"
-read opcion
-case $opcion in
+read option
+case $option in
 1) sh commands; exit;;
 2) sh users; exit;;
 3) sh files; exit;;
 9) clear; exit;;
-*) echo "Error de Digitación"; sleep 1;;
+*) echo "Typing error"; sleep 1;;
 esac
 done
 ```
@@ -58,15 +58,15 @@ echo "__________________________________________________________________________
 echo "|_______________________________________________________________________________________|"
 echo "||_____________________________________________________________________________________||"
 echo "|||                                                                                   |||"
-echo "|||                               MENU COMANDOS GENERALES                             |||"
+echo "|||                                  GENERAL COMMANDS                                 |||"
 echo "|||                                                                                   |||"
-echo "|||      1. VISUALIZAR HORA DEL SISTEMA                                               |||"
+echo "|||      1. DISPLAY SYSTEM TIME                                                       |||"
 echo "|||                                                                                   |||"
-echo "|||      2. PATH O RUTA ACTUAL                                                        |||"
+echo "|||      2. PATH OF THE CURRENT DIRECTORY                                             |||"
 echo "|||                                                                                   |||"
-echo "|||      3. CAMBIO DE PASSWORD                                                        |||"
+echo "|||      3. CHANGE PASSWORD                                                           |||"
 echo "|||                                                                                   |||"
-echo "|||      9. REGRESAR                                                                  |||"
+echo "|||      9. RETURN                                                                    |||"
 echo "|||                                                                                   |||"
 echo "|||                                                                                   |||"
 echo "|||                                                                                   |||"
@@ -77,23 +77,23 @@ echo "|||                                                                       
 echo "|||                                                                                   |||"
 echo "|||                                                                                   |||"
 echo "|||                                                                        0000___000 |||"
-echo "|||      Señor Usuario, Por favor Seleccione Índice de Opción deseada      00000__000 |||"
+echo "|||      Please select desired option index                                00000__000 |||"
 echo "|||                                                                        000_000000 |||"
 echo "|||                                                                        000__00000 |||"
 echo "|||                                                                        000___0000 |||"
 echo "|||___________________________________________________________________________________|||"
 echo "||_____________________________________________________________________________________||"
 echo "|_______________________________________________________________________________________|"
-read opcion
-case $opcion in
-1) echo "La Hora Actual del sistema es "; date;
-   echo "Presione Enter para Continuar"; read nulo;;
-2) echo "La Ruta Actual es "; pwd;
-   echo "Presione Enter para Continuar"; read nule;;
+read option
+case $option in
+1) echo "The current time of the system is "; date;
+   echo "Press ENTER to continue"; read nulo;;
+2) echo "The current path is "; pwd;
+   echo "Press ENTER to continue"; read nule;;
 3) passwd;
-   echo "Presione Enter para Continuar"; read nuli;;
+   echo "Press ENTER to continue"; read nuli;;
 9) sh menu; break;;
-*) echo "Error de Digitación"; sleep 1;;
+*) echo "Typing error"; sleep 1;;
 esac
 done
 ```
@@ -107,13 +107,13 @@ echo "__________________________________________________________________________
 echo "|_______________________________________________________________________________________|"
 echo "||_____________________________________________________________________________________||"
 echo "|||                                                                                   |||"
-echo "|||                                    MENU USUARIOS                                  |||"
+echo "|||                                       USERS                                       |||"
 echo "|||                                                                                   |||"
-echo "|||      1. MOSTRAR USUARIOS CONECTADOS                                               |||"
+echo "|||      1. SHOW CONNECTED USERS                                                      |||"
 echo "|||                                                                                   |||"
-echo "|||      2. ENVIAR MENSAJE A UN USUARIO                                               |||"
+echo "|||      2. SEND MESSSAGE TO AN USER                                                  |||"
 echo "|||                                                                                   |||"
-echo "|||      9. REGRESAR                                                                  |||"
+echo "|||      9. RETURN                                                                    |||"
 echo "|||                                                                                   |||"
 echo "|||                                                                                   |||"
 echo "|||                                                                                   |||"
@@ -126,32 +126,32 @@ echo "|||                                                                       
 echo "|||                                                                                   |||"
 echo "|||                                                                                   |||"
 echo "|||                                                                        0000___000 |||"
-echo "|||      Señor Usuario, Por favor Seleccione Índice de Opción deseada      00000__000 |||"
+echo "|||      Please select desired option index                                00000__000 |||"
 echo "|||                                                                        000_000000 |||"
 echo "|||                                                                        000__00000 |||"
 echo "|||                                                                        000___0000 |||"
 echo "|||___________________________________________________________________________________|||"
 echo "||_____________________________________________________________________________________||"
 echo "|_______________________________________________________________________________________|"
-read opcion
-case $opcion in
-1) echo "Los Usuarios Actualmente Conectados en el sistema son"; who -q;
-   echo "Presione Enter para Continuar"; read nulo;;
-2) echo "Digite el Nombre del Destinatario";
-   read usuario;
-   cantidad=`who | grep -w $usuario | wc -l`;
-   if test $cantidad -gt 0
+read option
+case $option in
+1) echo "The users connected in the system are "; who -q;
+   echo "Press ENTER to continue"; read nulo;;
+2) echo "Type the recipient's name";
+   read user;
+   quantity=`who | grep -w $user | wc -l`;
+   if test $quantity -gt 0
    then
-        echo "Por favor, escriba su mensaje y presione Enter para enviar"
-        read mensaje
-        echo $mensaje | mesg $usuario
-        echo "Su mensaje se ha enviado correctamente"
+        echo "Please, write your message and press ENTER to send"
+        read message
+        echo $message | mesg $user
+        echo "Your message has been sent correctly"
    else
-        echo "Error, el destinatario $usuario no está conectado"
+        echo "Error, the recipient $user is not connected"
    fi;
    sleep 2;;
 9) sh menu; break;;
-*) echo "Error de Digitación"; sleep 1;;
+*) echo "Typing error"; sleep 1;;
 esac
 done
 ```
@@ -165,126 +165,126 @@ echo "__________________________________________________________________________
 echo "|_______________________________________________________________________________________|"
 echo "||_____________________________________________________________________________________||"
 echo "|||                                                                                   |||"
-echo "|||                                  MENU DE ARCHIVOS                                 |||"
+echo "|||                                       FILES                                       |||"
 echo "|||                                                                                   |||"
-echo "|||      1. CREAR DIRECTORIO                                                          |||"
+echo "|||      1. CREATE DIRECTORY                                                          |||"
 echo "|||                                                                                   |||"
-echo "|||      2. COPIAR ARCHIVOS                                                           |||"
+echo "|||      2. COPY FILES                                                                |||"
 echo "|||                                                                                   |||"
-echo "|||      3. MODIFICAR PERMISOS A UN ARCHIVO                                           |||"
+echo "|||      3. MODIFY PERMITS TO A FILE                                                  |||"
 echo "|||                                                                                   |||"
-echo "|||      4. VISUALIZAR EL CONTENIDO DE UN ARCHIVO                                     |||"
+echo "|||      4. DISPLAY THE CONTENT OF A FILE                                             |||"
 echo "|||                                                                                   |||"
-echo "|||      5. BORRAR UN ARCHIVO                                                         |||"
+echo "|||      5. DELETE A FILE                                                             |||"
 echo "|||                                                                                   |||"
-echo "|||      6. CAMBIAR EL NOMBRE DE UN ARCHIVO                                           |||"
+echo "|||      6. CHANGE THE FILE'S NAME                                                    |||"
 echo "|||                                                                                   |||"
-echo "|||      9. REGRESAR                                                                  |||"
+echo "|||      9. RETURN                                                                    |||"
 echo "|||                                                                                   |||"
 echo "|||                                                                                   |||"
 echo "|||                                                                                   |||"
 echo "|||                                                                        0000___000 |||"
-echo "|||      Señor Usuario, Por favor Seleccione Índice de Opción deseada      00000__000 |||"
+echo "|||      Please select desired option index                                00000__000 |||"
 echo "|||                                                                        000_000000 |||"
 echo "|||                                                                        000__00000 |||"
 echo "|||                                                                        000___0000 |||"
 echo "|||___________________________________________________________________________________|||"
 echo "||_____________________________________________________________________________________||"
 echo "|_______________________________________________________________________________________|"
-read opcion
-case $opcion in
-1) echo "Ingrese Nombre del Directorio a crear y Presione Enter";
-   read directorio;
-   if test -d $directorio
+read option
+case $option in
+1) echo "Enter the name of the directory to be created and Press ENTER";
+   read directory;
+   if test -d $directory
    then
-      echo "Error, el Directorio $directorio ya Existe"
+      echo "Error, the directory $directory already exist"
    else
-      mkdir $directorio
-      echo "El Directorio $directorio se ha creado correctamente"
-   fi; echo "Presione Enter para Continuar"; read lol;;
-2) echo "Ingrese Nombre del Archivo que desea copiar y Presione Enter";
-   read origen;
-   if test -f $origen;
+      mkdir $directory
+      echo "The directory $directory has been created correctly"
+   fi; echo "Press ENTER to continue"; read lol;;
+2) echo "Enter the file name you want to copy and Press ENTER";
+   read origin;
+   if test -f $origin;
    then
-       echo "Ingrese el Nombre de la nueva copia y Presione Enter"
-       read destino
-       if test -f $destino
+       echo "Enter the name of the new copy and Press ENTER"
+       read destiny
+       if test -f $destiny
        then
            while :
            do
-             echo "El archivo $destino ya existe, desea reemplazarlo? (si/no)"
-             read seleccion
-             case "$seleccion" in
-             "si") cp $origen $destino; echo "La Copia se ha realizado correctamente"; break;;
+             echo "The file $destiny already exist, Do you want to replace it? (yes/no)"
+             read selection
+             case "$selection" in
+             "yes") cp $origin $destiny; echo "The copy has been created correctly"; break;;
              "no") break;;
-             *) echo "Error de Digitación"; sleep 1;;
+             *) echo "Typing error"; sleep 1;;
              esac
            done
        else
-           cp $origen $destino
-           echo "La Copia se ha realizado correctamente"
+           cp $origin $destiny
+           echo "The copy has been created correctly"
        fi
    else
-       echo "Error, el Archivo $origen no Existe"
+       echo "Error, the file $origin doesn't exist"
    fi;
-   echo "Presione Enter para Continuar";
-   read nada;;
+   echo "Press ENTER to continue";
+   read nothing;;
 3) sh permissions; exit;;
-4) echo "Ingrese el Nombre del Archivo a Visualizar su Contenido";
-   read visualizar;
-   if test -f $visualizar
+4) echo "Enter the file name to display its content";
+   read fileName;
+   if test -f $fileName
    then
-       if test -s $visualizar
+       if test -s $fileName
        then
-           echo "El Contenido del Archivo $visualizar es el Siguiente:"
-           cat $visualizar
-           echo "Presione Enter para Continuar"
-           read visual
+           echo "The contents of the file $fileName is the following:"
+           cat $fileName
+           echo "Press ENTER to continue"
+           read nothing
        else
-           echo "Error, el Archivo $visualizar está vacio"
+           echo "Error, the file $fileName is empty"
            sleep 2
        fi
    else
-       echo "Error, El Archivo $visualizar No Existe"
+       echo "Error, the file $fileName doesn't exist"
        sleep 1
    fi;;
-5) echo "Ingrese el Nombre del Archivo a Borrar";
-   read borrar;
-   if test -f $borrar;
+5) echo "Enter the name of the file to delete";
+   read fileName;
+   if test -f $fileName;
    then
-       rm -rf $borrar
-       echo "El Archivo $borrar se ha eliminado correctamente"
-       echo "Presione Enter para Continuar"
-       read borrar
+       rm -rf $fileName
+       echo "The file $fileName has been deleted correctly"
+       echo "Press ENTER to continue"
+       read nothing
    else
-       echo "Error, El Archivo $borrar No existe"
+       echo "Error, the file $fileName doesn't exist"
        sleep 1
    fi;;
-6) echo "Ingrese el Nombre del Archivo a Cambiar";
-   read rename;
-   if test -f $rename;
+6) echo "Enter the name of the file to change";
+   read fileName;
+   if test -f $fileName;
    then
-       echo "Ingrese el nuevo Nombre del Archivo"
-       read name
-       if test -f $name
+       echo "Enter the new name of the file"
+       read newName
+       if test -f $newName
        then
            while :
            do
-           echo "El Archivo $name ya Existe, desea sobreescribirlo? (si/no)"
-           read decision
-           case "$decision" in
-           "si") mv $rename $name; echo "El Archivo se ha Sobreescribido Correctamente"; break;;
+           echo "The file $newName already exist, Do you want to overwrite it?? (yes/no)"
+           read optionSelected
+           case "$optionSelected" in
+           "yes") mv $fileName $newName; echo "The file has been overwrited correctly"; break;;
            "no") break;;
-           *) echo "Error de Digitación"; sleep 1;;
+           *) echo "Typing error"; sleep 1;;
            esac
            done
        else
-           mv $rename $name; echo "El Archivo $name se ha Modificado Correctamente"
+           mv $fileName $newName; echo "The file $fileName has been modified correctly"
        fi
-       echo "Presione Enter para Continuar"
-       read nada
+       echo "Press ENTER to continue"
+       read nothing
    else
-       echo "Error, El Archivo $rename No Existe"
+       echo "Error, the file $fileName doesn't exist"
        sleep 1
    fi;;
 9) sh menu; exit;;
@@ -295,119 +295,119 @@ done
 
 ## permissions
 ```
-echo "Ingresar el Nombre del Archivo a Modificar sus Permisos"
-read archivo
-if test -f $archivo
+echo "Enter the name of the file to modify its permissions"
+read fileName
+if test -f $fileName
 then
 cont=0
-cantidad=0
+quantity=0
 while [ $cont -lt 3 ]
 do
 if test $cont -eq 0
 then
-    control="Dueño"
+    control="Owner"
 elif test $cont -eq 1
 then
-    control="Grupo"
+    control="Group"
 else
-    control="Otros"
+    control="Others"
 fi
 clear
 echo "_________________________________________"
 echo "|                                       |"
-echo "||   Administrar Permisos de "$control"     ||"
+echo "||    Manage "$control" permissions    ||"
 echo "||                                     ||"
-echo "||  1. Solo Ejecutable                 ||"
-echo "||  2. Solo Escritura                  ||"
-echo "||  3. Escritura y Ejecutable          ||"
-echo "||  4. Solo Lectura                    ||"
-echo "||  5. Lectura y Ejecutable            ||"
-echo "||  6. Lectura y Escritura             ||"
-echo "||  7. Lectura, Escritura y Ejecutable ||"
-echo "||  8. Ninguno                         ||"
+echo "||  1. Only executable                 ||"
+echo "||  2. Only writing                    ||"
+echo "||  3. Writing and executable          ||"
+echo "||  4. Only reading                    ||"
+echo "||  5. Reading and executable          ||"
+echo "||  6. Reading and writing             ||"
+echo "||  7. Reading, writing and executable ||"
+echo "||  8. Nothing                         ||"
 echo "|_______________________________________|"
-read opcion
-case $opcion in
+read option
+case $option in
 1)cont=$(( $cont + 1 ));
   if test $cont -eq 1
   then
-      cantidad=$(( $cantidad + 100 ))
+      quantity=$(( $quantity + 100 ))
   elif test $cont -eq 2
   then
-      cantidad=$(( $cantidad + 10 ))
+      quantity=$(( $quantity + 10 ))
   else
-      cantidad=$(( $cantidad + 1 ))
+      quantity=$(( $quantity + 1 ))
   fi;;
 2)cont=$(( $cont + 1 ));
   if test $cont -eq 1
   then
-      cantidad=$(( $cantidad + 200 ))
+      quantity=$(( $quantity + 200 ))
   elif test $cont -eq 2
   then
-      cantidad=$(( $cantidad + 20 ))
+      quantity=$(( $quantity + 20 ))
   else
-      cantidad=$(( $cantidad + 2 ))
+      quantity=$(( $quantity + 2 ))
   fi;;
 3)cont=$(( $cont + 1 ));
   if test $cont -eq 1
   then
-      cantidad=$(( $cantidad + 300 ))
+      quantity=$(( $quantity + 300 ))
   elif test $cont -eq 2
   then
-      cantidad=$(( $cantidad + 30 ))
+      quantity=$(( $quantity + 30 ))
   else
-      cantidad=$(( $cantidad + 3 ))
+      quantity=$(( $quantity + 3 ))
   fi;;
 4)cont=$(( $cont + 1 ));
   if test $cont -eq 1
   then
-      cantidad=$(( $cantidad + 400 ))
+      quantity=$(( $quantity + 400 ))
   elif test $cont -eq 2
   then
-      cantidad=$(( $cantidad + 40 ))
+      quantity=$(( $quantity + 40 ))
   else
-      cantidad=$(( $cantidad + 4 ))
+      quantity=$(( $quantity + 4 ))
   fi;;
 5)cont=$(( $cont + 1 ));
   if test $cont -eq 1
   then
-      cantidad=$(( $cantidad + 500 ))
+      quantity=$(( $quantity + 500 ))
   elif test $cont -eq 2
   then
-      cantidad=$(( $cantidad + 50 ))
+      quantity=$(( $quantity + 50 ))
   else
-      cantidad=$(( $cantidad + 5 ))
+      quantity=$(( $quantity + 5 ))
   fi;;
 6)cont=$(( $cont + 1 ));
   if test $cont -eq 1
   then
-      cantidad=$(( $cantidad + 600 ))
+      quantity=$(( $quantity + 600 ))
   elif test $cont -eq 2
   then
-      cantidad=$(( $cantidad + 60 ))
+      quantity=$(( $quantity + 60 ))
   else
-      cantidad=$(( $cantidad + 6 ))
+      quantity=$(( $quantity + 6 ))
   fi;;
 7)cont=$(( $cont + 1 ));
   if test $cont -eq 1
   then
-      cantidad=$(( $cantidad + 700 ))
+      quantity=$(( $quantity + 700 ))
   elif test $cont -eq 2
   then
-      cantidad=$(( $cantidad + 70 ))
+      quantity=$(( $quantity + 70 ))
   else
-      cantidad=$(( $cantidad + 7 ))
+      quantity=$(( $quantity + 7 ))
   fi;;
 8)cont=$(( $cont + 1 ));;
-*)echo "Error de Digitación"; sleep 1;;
+*)echo "Typing error"; sleep 1;;
 esac
 done
-chmod $cantidad $archivo
-echo "Al Archivo $archivo se le han Modificado los Permisos Correctamente"
-echo "Presione Enter para Continuar"
-read nada
+chmod $quantity $fileName
+echo "The file $fileName has been modified its permissions correctly"
+echo "Press ENTER to continue"
+read nothing
 else
-   echo "Error, El Archivo $archivo no Existe"
+   echo "Error, The file $fileName doesn't exist"
 sleep 1
 fi
 sh files
