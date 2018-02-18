@@ -87,11 +87,11 @@ echo "|_________________________________________________________________________
 read option
 case $option in
 1) echo "The current time of the system is "; date;
-   echo "Press ENTER to continue"; read nulo;;
+   echo "Press ENTER to continue"; read nothing;;
 2) echo "The current path is "; pwd;
-   echo "Press ENTER to continue"; read nule;;
+   echo "Press ENTER to continue"; read nothing;;
 3) passwd;
-   echo "Press ENTER to continue"; read nuli;;
+   echo "Press ENTER to continue"; read nothing;;
 9) sh menu; break;;
 *) echo "Typing error"; sleep 1;;
 esac
