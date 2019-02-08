@@ -1,0 +1,116 @@
+echo "Enter the name of the file to modify its permissions"
+read fileName
+if test -f $fileName
+then
+cont=0
+quantity=0
+while [ $cont -lt 3 ]
+do
+if test $cont -eq 0
+then
+    control="Owner"
+elif test $cont -eq 1
+then
+    control="Group"
+else
+    control="Others"
+fi
+clear
+echo "_________________________________________"
+echo "|                                       |"
+echo "||    Manage "$control" permissions    ||"
+echo "||                                     ||"
+echo "||  1. Only executable                 ||"
+echo "||  2. Only writing                    ||"
+echo "||  3. Writing and executable          ||"
+echo "||  4. Only reading                    ||"
+echo "||  5. Reading and executable          ||"
+echo "||  6. Reading and writing             ||"
+echo "||  7. Reading, writing and executable ||"
+echo "||  8. Nothing                         ||"
+echo "|_______________________________________|"
+read option
+case $option in
+1)cont=$(( $cont + 1 ));
+  if test $cont -eq 1
+  then
+      quantity=$(( $quantity + 100 ))
+  elif test $cont -eq 2
+  then
+      quantity=$(( $quantity + 10 ))
+  else
+      quantity=$(( $quantity + 1 ))
+  fi;;
+2)cont=$(( $cont + 1 ));
+  if test $cont -eq 1
+  then
+      quantity=$(( $quantity + 200 ))
+  elif test $cont -eq 2
+  then
+      quantity=$(( $quantity + 20 ))
+  else
+      quantity=$(( $quantity + 2 ))
+  fi;;
+3)cont=$(( $cont + 1 ));
+  if test $cont -eq 1
+  then
+      quantity=$(( $quantity + 300 ))
+  elif test $cont -eq 2
+  then
+      quantity=$(( $quantity + 30 ))
+  else
+      quantity=$(( $quantity + 3 ))
+  fi;;
+4)cont=$(( $cont + 1 ));
+  if test $cont -eq 1
+  then
+      quantity=$(( $quantity + 400 ))
+  elif test $cont -eq 2
+  then
+      quantity=$(( $quantity + 40 ))
+  else
+      quantity=$(( $quantity + 4 ))
+  fi;;
+5)cont=$(( $cont + 1 ));
+  if test $cont -eq 1
+  then
+      quantity=$(( $quantity + 500 ))
+  elif test $cont -eq 2
+  then
+      quantity=$(( $quantity + 50 ))
+  else
+      quantity=$(( $quantity + 5 ))
+  fi;;
+6)cont=$(( $cont + 1 ));
+  if test $cont -eq 1
+  then
+      quantity=$(( $quantity + 600 ))
+  elif test $cont -eq 2
+  then
+      quantity=$(( $quantity + 60 ))
+  else
+      quantity=$(( $quantity + 6 ))
+  fi;;
+7)cont=$(( $cont + 1 ));
+  if test $cont -eq 1
+  then
+      quantity=$(( $quantity + 700 ))
+  elif test $cont -eq 2
+  then
+      quantity=$(( $quantity + 70 ))
+  else
+      quantity=$(( $quantity + 7 ))
+  fi;;
+8)cont=$(( $cont + 1 ));;
+*)echo "Typing error"; sleep 1;;
+esac
+done
+chmod $quantity $fileName
+echo "The file $fileName has been modified its permissions correctly"
+echo "Press ENTER to continue"
+read nothing
+else
+   echo "Error, The file $fileName doesn't exist"
+sleep 1
+fi
+sh files
