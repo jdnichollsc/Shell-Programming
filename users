@@ -1,0 +1,54 @@
+while :
+do
+clear
+echo "_________________________________________________________________________________________"
+echo "|_______________________________________________________________________________________|"
+echo "||_____________________________________________________________________________________||"
+echo "|||                                                                                   |||"
+echo "|||                                       USERS                                       |||"
+echo "|||                                                                                   |||"
+echo "|||      1. SHOW CONNECTED USERS                                                      |||"
+echo "|||                                                                                   |||"
+echo "|||      2. SEND MESSSAGE TO AN USER                                                  |||"
+echo "|||                                                                                   |||"
+echo "|||      9. RETURN                                                                    |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                        0000___000 |||"
+echo "|||      Please select desired option index                                00000__000 |||"
+echo "|||                                                                        000_000000 |||"
+echo "|||                                                                        000__00000 |||"
+echo "|||                                                                        000___0000 |||"
+echo "|||___________________________________________________________________________________|||"
+echo "||_____________________________________________________________________________________||"
+echo "|_______________________________________________________________________________________|"
+read option
+case $option in
+1) echo "The users connected in the system are "; who -q;
+   echo "Press ENTER to continue"; read nulo;;
+2) echo "Type the recipient's name";
+   read user;
+   quantity=`who | grep -w $user | wc -l`;
+   if test $quantity -gt 0
+   then
+        echo "Please, write your message and press ENTER to send"
+        read message
+        echo $message | mesg $user
+        echo "Your message has been sent correctly"
+   else
+        echo "Error, the recipient $user is not connected"
+   fi;
+   sleep 2;;
+9) sh menu; break;;
+*) echo "Typing error"; sleep 1;;
+esac
+done
