@@ -1,0 +1,133 @@
+while :
+do
+clear
+echo "_________________________________________________________________________________________"
+echo "|_______________________________________________________________________________________|"
+echo "||_____________________________________________________________________________________||"
+echo "|||                                                                                   |||"
+echo "|||                                       FILES                                       |||"
+echo "|||                                                                                   |||"
+echo "|||      1. CREATE DIRECTORY                                                          |||"
+echo "|||                                                                                   |||"
+echo "|||      2. COPY FILES                                                                |||"
+echo "|||                                                                                   |||"
+echo "|||      3. MODIFY PERMITS TO A FILE                                                  |||"
+echo "|||                                                                                   |||"
+echo "|||      4. DISPLAY THE CONTENT OF A FILE                                             |||"
+echo "|||                                                                                   |||"
+echo "|||      5. DELETE A FILE                                                             |||"
+echo "|||                                                                                   |||"
+echo "|||      6. CHANGE THE FILE'S NAME                                                    |||"
+echo "|||                                                                                   |||"
+echo "|||      9. RETURN                                                                    |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                        0000___000 |||"
+echo "|||      Please select desired option index                                00000__000 |||"
+echo "|||                                                                        000_000000 |||"
+echo "|||                                                                        000__00000 |||"
+echo "|||                                                                        000___0000 |||"
+echo "|||___________________________________________________________________________________|||"
+echo "||_____________________________________________________________________________________||"
+echo "|_______________________________________________________________________________________|"
+read option
+case $option in
+1) echo "Enter the name of the directory to be created and Press ENTER";
+   read directory;
+   if test -d $directory
+   then
+      echo "Error, the directory $directory already exist"
+   else
+      mkdir $directory
+      echo "The directory $directory has been created correctly"
+   fi; echo "Press ENTER to continue"; read lol;;
+2) echo "Enter the file name you want to copy and Press ENTER";
+   read origin;
+   if test -f $origin;
+   then
+       echo "Enter the name of the new copy and Press ENTER"
+       read destiny
+       if test -f $destiny
+       then
+           while :
+           do
+             echo "The file $destiny already exist, Do you want to replace it? (yes/no)"
+             read selection
+             case "$selection" in
+             "yes") cp $origin $destiny; echo "The copy has been created correctly"; break;;
+             "no") break;;
+             *) echo "Typing error"; sleep 1;;
+             esac
+           done
+       else
+           cp $origin $destiny
+           echo "The copy has been created correctly"
+       fi
+   else
+       echo "Error, the file $origin doesn't exist"
+   fi;
+   echo "Press ENTER to continue";
+   read nothing;;
+3) sh permissions; exit;;
+4) echo "Enter the file name to display its content";
+   read fileName;
+   if test -f $fileName
+   then
+       if test -s $fileName
+       then
+           echo "The contents of the file $fileName is the following:"
+           cat $fileName
+           echo "Press ENTER to continue"
+           read nothing
+       else
+           echo "Error, the file $fileName is empty"
+           sleep 2
+       fi
+   else
+       echo "Error, the file $fileName doesn't exist"
+       sleep 1
+   fi;;
+5) echo "Enter the name of the file to delete";
+   read fileName;
+   if test -f $fileName;
+   then
+       rm -rf $fileName
+       echo "The file $fileName has been deleted correctly"
+       echo "Press ENTER to continue"
+       read nothing
+   else
+       echo "Error, the file $fileName doesn't exist"
+       sleep 1
+   fi;;
+6) echo "Enter the name of the file to change";
+   read fileName;
+   if test -f $fileName;
+   then
+       echo "Enter the new name of the file"
+       read newName
+       if test -f $newName
+       then
+           while :
+           do
+           echo "The file $newName already exist, Do you want to overwrite it?? (yes/no)"
+           read optionSelected
+           case "$optionSelected" in
+           "yes") mv $fileName $newName; echo "The file has been overwrited correctly"; break;;
+           "no") break;;
+           *) echo "Typing error"; sleep 1;;
+           esac
+           done
+       else
+           mv $fileName $newName; echo "The file $fileName has been modified correctly"
+       fi
+       echo "Press ENTER to continue"
+       read nothing
+   else
+       echo "Error, the file $fileName doesn't exist"
+       sleep 1
+   fi;;
+9) sh menu; exit;;
+*) echo "Error de Digitación"; sleep 1;;
+esac
+done
