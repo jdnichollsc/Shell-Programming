@@ -1,0 +1,45 @@
+while :
+do
+clear
+echo "_________________________________________________________________________________________"
+echo "|_______________________________________________________________________________________|"
+echo "||_____________________________________________________________________________________||"
+echo "|||                                                                                   |||"
+echo "|||                                  GENERAL COMMANDS                                 |||"
+echo "|||                                                                                   |||"
+echo "|||      1. DISPLAY SYSTEM TIME                                                       |||"
+echo "|||                                                                                   |||"
+echo "|||      2. PATH OF THE CURRENT DIRECTORY                                             |||"
+echo "|||                                                                                   |||"
+echo "|||      3. CHANGE PASSWORD                                                           |||"
+echo "|||                                                                                   |||"
+echo "|||      9. RETURN                                                                    |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                                   |||"
+echo "|||                                                                        0000___000 |||"
+echo "|||      Please select desired option index                                00000__000 |||"
+echo "|||                                                                        000_000000 |||"
+echo "|||                                                                        000__00000 |||"
+echo "|||                                                                        000___0000 |||"
+echo "|||___________________________________________________________________________________|||"
+echo "||_____________________________________________________________________________________||"
+echo "|_______________________________________________________________________________________|"
+read option
+case $option in
+1) echo "The current time of the system is "; date;
+   echo "Press ENTER to continue"; read nothing;;
+2) echo "The current path is "; pwd;
+   echo "Press ENTER to continue"; read nothing;;
+3) passwd;
+   echo "Press ENTER to continue"; read nothing;;
+9) sh menu; break;;
+*) echo "Typing error"; sleep 1;;
+esac
+done
