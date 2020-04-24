@@ -159,4 +159,4 @@ _________________________________________
 # Happy coding
 Made with <3
 
-<img width="150px" src="http://phaser.azurewebsites.net/assets/nicholls.png" align="right">
+<img width="150px" src="https://github.com/jdnichollsc/jdnichollsc.github.io/blob/master/assets/nicholls.png?raw=true" align="right">
